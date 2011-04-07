@@ -1,0 +1,13 @@
+h1 = title 'Edit offer'
+
+form action=offer_path(offer) method="post"
+  /input name="utf8" type="hidden" value="✓"
+  input name="_method" type="hidden" value="put"
+
+  input name="offer[description]" value=offer.description
+  label
+    ' Expired at
+    = datetime_select :offer, :expired_at, value: offer.expired_at
+
+  p
+    input type="submit"

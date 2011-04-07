@@ -1,0 +1,47 @@
+Social referral
+===============
+
+A system to entice users through incentives to refer offers to their friends via social networks. The offers will have further incentives to encourage those referees to accept the offer as well as continue to refer friends in their social networks. The process continues on to third, fourth, and so on, degree of social connection; thereby creating a rapid, self subsisting referral system.
+
+An integrated url shortener will facilitate sharing and tracking of offer referrals.
+
+Requirements
+============
+
+Referral
+
+  - Referer can refer offers to friends via facebook, twitter, email, etc.
+
+  - Referer can choose an incentive from a list of incentives
+
+Referral Tracking
+
+  - Referer can track events on referrals such as visits, signups
+
+  - Referer can track referees and which social network they came from
+
+Offer
+
+  - Admin can set incentive to refer and incentive to accept offer
+
+  - Admin can manage offers
+
+  - Referer receives new offer acceptance acknowledgement with referral incentive reminder
+
+ Offer Tracking
+
+  - Admin can track the numbers of referrals on an offer
+
+  - Admin can track number of offer acceptance, and their source
+
+  - Admin can track status of redemption: email sent, redeemed
+
+Social Network
+
+  - Admin can track Facebook like, Twitter follow
+
+Dependency
+==========
+
+- Rails 3
+- Mongoid

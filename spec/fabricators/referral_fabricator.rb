@@ -1,0 +1,2 @@
+Fabricator :referral do
+end

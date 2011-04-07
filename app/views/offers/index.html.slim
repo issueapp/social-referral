@@ -1,0 +1,22 @@
+h1 = title "Offer listing"
+
+table
+ tr
+   th Id
+   th Description
+   th Expired at
+   th #Referrals
+   th Actions
+
+ - for offer in @offers
+   tr
+     td = offer.id
+     td = offer.description
+     td = offer.expired_at
+     td = offer.referral_count
+     td
+       = link_to 'Edit', [:edit, offer]
+       '
+       = link_to 'Remove', offer, method: :delete, confirm: 'Are you sure?'
+
+= link_to 'New offer', [:new, :offer]

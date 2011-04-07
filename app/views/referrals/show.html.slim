@@ -1,0 +1,57 @@
+h1
+ ' What you get
+ = referral.incentive_offer_description
+
+h1
+ ' What your friends get
+ = referral.friend_offer_description
+
+h1 Referral Links
+
+p
+  = link_to 'referral link', url_for_referral(referral)
+  '
+  = link_to 'facebook', "http://www.facebook.com/sharer.php?u=#{url_for_referral referral, src: 'facebook'}", class: 'share facebook'
+  '
+  = link_to 'twitter', "http://twitter.com/share?text=Check out #{url_for_referral referral, src: 'twitter'}&url=&via=ime", class: 'share twitter'
+  '
+  = link_to 'email', "", class: 'share email'
+
+h1 Referral Tracking
+
+p
+  ' User: 
+  = referral.referer.email
+
+table
+  tr
+    th Visits
+    th Facebook
+    th Twitter
+    th Email
+
+    th style="width: 30px"
+
+    th Signups
+    th Facebook
+    th Twitter
+    th Email
+
+  tr
+    td = referral.counter_hash['visits']
+    td = referral.counter_hash['facebook_visits']
+    td = referral.counter_hash['twitter_visits']
+    td = referral.counter_hash['email_visits']
+
+    td
+
+    td = referral.counter_hash['signups']
+    td = referral.counter_hash['facebook_signups']
+    td = referral.counter_hash['twitter_signups']
+    td = referral.counter_hash['email_signups']
+
+h1 Referees
+
+ul
+  - for referee in referral.referees
+    li = referee.email

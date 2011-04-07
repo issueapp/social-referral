@@ -1,0 +1,25 @@
+h1 = referral.friend_offer_description
+
+- if referral
+  | TODO display offer template
+  /= render referral.friend_offer.template
+
+  - unless referral.friend_offer.expired?
+    div#expiry-countdown data-expired-at=referral.friend_offer.expired_at
+
+  /form id="accept-offer" action=referral.friend_offer_url  method="post"
+  form id="accept-offer" action="#" method="post"
+    input type="hidden" name="referral_id" value=referral.id
+    input type="hidden" name="src" value=params[:src]
+
+    input name="name" placeholder="Enter your name"
+    input name="email" placeholder="Enter your email"
+
+    input type="submit" value="Accept offer"
+
+p
+  ' Be rewarded with
+  = referral.incentive_offer_description
+  '
+  = link_to 'refer your friends', new_referral_path(incentive_offer: referral.incentive_offer.id, friend_offer: referral.friend_offer.id)
+

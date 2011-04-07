@@ -1,0 +1,13 @@
+- if @delivered
+  | Your friends have been notified.
+
+  p
+    a href="#" onclick="window.close()" Close
+
+- else
+
+  form class="share email" action=share_by_email_referral_path(@referral) method="post"
+
+    textarea name="emails" rows="10" cols="50" placeholder="Enter your friends like so kim@shop2.com, aaron@shop2.com"
+    p
+      input type="submit" value="Send"

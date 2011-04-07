@@ -1,0 +1,17 @@
+h1 = title 'New referral'
+
+h1
+  ' What you get -
+  = @incentive_offer.description
+
+h1
+  ' What your friends get -
+  = @friend_offer.description
+
+form action=referrals_path method="post"
+  input type="hidden" name="incentive_offer_id" value=params[:incentive_offer]
+  input type="hidden" name="friend_offer_id" value=params[:friend_offer]
+
+  input name="name" placeholder="Enter your name"
+  input type="email" name="email" placeholder="Enter your email"
+  input type="submit" value="Generate referral link"

@@ -1,0 +1,11 @@
+h1 = title "New offer"
+
+form id="new_offer" action=offers_path method="post"
+  input name="offer[description]" placeholder="Enter description"
+
+  label
+    ' Expired at
+    = datetime_select :offer, :expired_at
+
+  p
+    input type="submit"

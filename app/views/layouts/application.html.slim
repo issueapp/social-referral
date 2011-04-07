@@ -1,0 +1,18 @@
+!doctype html
+html
+  head
+    title = "Incentivizer - " + yield(:title) || ""
+    meta http-equiv="Content-type" content="text/html; charset=utf-8"
+    meta http-equiv="Content-language" content="en"
+    = csrf_meta_tag
+    = stylesheet_link_tag :all
+
+    = yield :head
+  body
+    - flash.each do |name, message|
+      div class=name = message
+
+    = yield
+
+    = javascript_include_tag *%w[jquery rails application]
+    = yield :javascript
